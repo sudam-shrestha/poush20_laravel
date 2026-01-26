@@ -12,23 +12,25 @@
 
 
             <div class="mt-8">
-                <form action="" method="POST">
-
-
+                <form action="{{ route('course_store') }}" method="POST">
+                    @csrf
                     <div class="grid grid-cols-2 gap-4">
                         <div>
                             <label for="name">Name</label>
-                            <input type="text" name="name" id="name" class="border border-gray-300 w-full px-2 py-1" placeholder="Course Name">
+                            <input type="text" name="name" id="name"
+                                class="border border-gray-300 w-full px-2 py-1" placeholder="Course Name">
                         </div>
 
                         <div>
                             <label for="price">Price (in Rs.)</label>
-                            <input type="number" name="price" id="price" class="border border-gray-300 w-full px-2 py-1" value="999">
+                            <input type="number" name="price" id="price"
+                                class="border border-gray-300 w-full px-2 py-1" value="999">
                         </div>
 
                         <div>
                             <label for="duration">Duration</label>
-                            <input type="text" name="duration" id="duration" class="border border-gray-300 w-full px-2 py-1">
+                            <input type="text" name="duration" id="duration"
+                                class="border border-gray-300 w-full px-2 py-1">
                         </div>
 
                         <div class="col-span-2">
@@ -37,7 +39,8 @@
                         </div>
 
                         <div>
-                            {{-- <button type="submit"></button> --}}
+                            <button type="submit" class="bg-[green] text-white px-5 py-2 rounded-lg">Save
+                                Record</button>
                         </div>
                     </div>
 

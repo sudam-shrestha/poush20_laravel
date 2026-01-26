@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Course;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -30,3 +32,25 @@ Route::get("/course/create", function () {
 Route::get("/course/edit", function () {
     return view("course.edit");
 })->name("course_edit");
+
+
+Route::post("/course/store", function (Request $request) {
+    // return $request;
+    $course = new Course();
+    $course->name = $request->name;
+    $course->price = $request->price;
+    $course->duration = $request->duration;
+    $course->description = $request->description;
+    $course->save();
+    // return view("course.create");
+    return redirect()->route('course_create');
+
+})->name("course_store");
+
+
+// Get, Post let name = "sudam", $name = "sudam"
+// HTTP Methods
+// Get - read
+// Post - create , save, store
+// Put | Patch
+// Delete
