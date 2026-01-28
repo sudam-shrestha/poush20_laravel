@@ -11,10 +11,10 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
 
-    <header class="py-2 shadow text-center">
-        <x-navbar />
-    </header>
+
+    <x-navbar />
 
     <main>
         {{ $slot }}

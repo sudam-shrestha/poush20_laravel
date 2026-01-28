@@ -17,6 +17,7 @@ return new class extends Migration
             $table->double("price");//double, integer
             $table->string("duration");
             $table->longText("description");
+            $table->string("image")->nullable();
             $table->timestamps();
         });
     }

@@ -22,7 +22,8 @@ Route::get("/contact", function () {
 
 // Course Routes
 Route::get("/course/list", function () {
-    return view("course.list");
+    $courses = Course::all();
+    return view("course.list", compact('courses'));
 })->name("course_list");
 
 Route::get("/course/create", function () {
@@ -42,9 +43,8 @@ Route::post("/course/store", function (Request $request) {
     $course->duration = $request->duration;
     $course->description = $request->description;
     $course->save();
-    // return view("course.create");
+    toast("Course created successfully!", "success");
     return redirect()->route('course_create');
-
 })->name("course_store");
 
 
